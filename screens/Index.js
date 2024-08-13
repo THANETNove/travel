@@ -1,0 +1,8 @@
+import React from 'react';
+import { StyleSheet, Text, View, SafeAreaView, Button } from "react-native";
+
+export default function Index() {
+  return (
+    <Text>Index</Text>
+  )
+}
