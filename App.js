@@ -16,14 +16,14 @@ import { Provider } from "react-redux";
 import { PersistGate } from "redux-persist/integration/react";
 import { configureStore } from "./redux/store"; // import configureStore แทน { store, persistor }
 
-/* import Home from "./router/routerHome";
-import Login from "./screens/Login"; */
+/* import Home from "./router/routerHome"; */
+import Login from "./screens/Login";
 import Index from "./screens/Index";
-/* import Profile from "./screens/Profile";
+import Profile from "./screens/Profile";
 import ForgotPassword from "./screens/ForgotPassword";
 import Register from "./screens/Register";
 import UpPassword from "./screens/UpPassword";
-import BoxContent from "./screens/BoxContent";
+/* import BoxContent from "./screens/BoxContent";
 import TraveDetails from "./screens/TraveDetails";
  */
 const Tab = createBottomTabNavigator();
@@ -114,11 +114,11 @@ export default function App() {
             screenOptions={{ headerShown: false }}
           >
             <Stack.Screen name="Index" component={Index} />
-            {/*       <Stack.Screen name="Login" component={Login} />
+            <Stack.Screen name="Login" component={Login} />
             <Stack.Screen name="ForgotPassword" component={ForgotPassword} />
             <Stack.Screen name="Register" component={Register} />
             <Stack.Screen name="UpPassword" component={UpPassword} />
-            <Stack.Screen name="Home" component={MyTabs} /> */}
+            {/*  <Stack.Screen name="Home" component={MyTabs} /> */}
           </Stack.Navigator>
         </NavigationContainer>
       </PersistGate>
