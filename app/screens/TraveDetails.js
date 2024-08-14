@@ -5,8 +5,8 @@ import { useSelector, useDispatch } from "react-redux";
 import Icon from "react-native-vector-icons/FontAwesome";
 import { apiUrlImage as url } from "../config";
 import RenderHtml from 'react-native-render-html';
-import { WebView } from 'react-native-webview';
-
+/* import { WebView } from 'react-native-webview';
+ */
 import { addView } from "../redux/auth"; // ต้องการ import logoutUser
 
 
@@ -79,11 +79,11 @@ const TraveDetails = ({ navigation }) => {
         return (
             <View style={styles.detaisBoxVideo}>
 
-                {placeData.video ? <WebView
+                {/*    {placeData.video ? <WebView
                     source={{ uri: placeData.video }}
                     style={styles.webview}
                 /> : <View style={styles.loadingPlaceholder} />}
-
+ */}
 
             </View>
         )
@@ -92,10 +92,10 @@ const TraveDetails = ({ navigation }) => {
 
         return (
             <View style={styles.detaisBoxVideo}>
-                {placeData.gps ? <WebView
+                {/*   {placeData.gps ? <WebView
                     source={{ uri: placeData.gps }}
                     style={styles.webview}
-                /> : <View style={styles.loadingPlaceholder} />}
+                /> : <View style={styles.loadingPlaceholder} />} */}
 
 
             </View>

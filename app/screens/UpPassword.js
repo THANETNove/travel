@@ -11,7 +11,7 @@ import {
   ScrollView,
 } from "react-native";
 import Icon from "react-native-vector-icons/FontAwesome";
-import logo from "../assets/LogoLB.png";
+import logo from "../../assets/images/LogoLB.png";
 import { updatePassword, logoutUser } from "../redux/auth";
 import { useSelector, useDispatch } from "react-redux";
 

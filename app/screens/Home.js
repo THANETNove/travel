@@ -24,10 +24,10 @@ const Home = ({ navigation }) => {
 
 
   const images = [
-    require("../assets/image/a1.webp"),
-    require("../assets/image/a2.jpeg"),
-    require("../assets/image/a3.webp"),
-    require("../assets/image/a4.jpeg"),
+    require("../../assets/images/a1.webp"),
+    require("../../assets/images/a2.jpeg"),
+    require("../../assets/images/a3.webp"),
+    require("../../assets/images/a4.jpeg"),
   ];
 
   useEffect(() => {

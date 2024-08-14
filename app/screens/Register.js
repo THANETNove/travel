@@ -12,7 +12,7 @@ import {
 } from "react-native";
 import { registerUser, logoutUser } from "../redux/auth";
 import Icon from "react-native-vector-icons/FontAwesome";
-import logo from "../assets/LogoLB.png";
+import logo from "../../assets/images/LogoLB.png";
 
 import { useSelector, useDispatch } from "react-redux";
 

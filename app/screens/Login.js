@@ -12,7 +12,7 @@ import {
 
 import { useSelector, useDispatch } from "react-redux";
 import { loginUser, logoutUser } from "../redux/auth"; // ต้องการ import logoutUser
-import logo from "../assets/LogoLB.png";
+import logo from "../../assets/images/LogoLB.png";
 
 const Login = ({ navigation }) => {
   const dispatch = useDispatch();
@@ -69,7 +69,8 @@ const Login = ({ navigation }) => {
 
   useEffect(() => {
     if (user != null) {
-      navigation.navigate("Home");
+      console.log("9999");
+      navigation.navigate("Min");
     }
     if (statusUser == "fail") {
       setErrors((prevState) => ({

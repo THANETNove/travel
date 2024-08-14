@@ -13,7 +13,7 @@ import {
 import { useDispatch } from "react-redux";
 import { logoutUser } from "../redux/auth"; // ต้องการ import logoutUser
 import { useSelector } from "react-redux";
-import logo from "../assets/LogoLB.png";
+import logo from "../../assets/images/LogoLB.png";
 
 const Profile = ({ navigation }) => {
   const user = useSelector((state) => state.authUser.user);
