@@ -1,44 +1,46 @@
-import React from "react";
-import { StatusBar } from "expo-status-bar";
-import {
-  StyleSheet,
-  View,
-  Text,
-  Image,
-  Button,
-  Pressable,
-  SafeAreaView,
-} from "react-native";
+import React, { useEffect } from "react";
+import { StyleSheet, View, Text, Image, Pressable } from "react-native";
 import { useSelector } from "react-redux";
 import logo from "../assets/LogoLB.png";
+import { apiUrl as url } from "../config";
 
 const Index = ({ navigation }) => {
   const user = useSelector((state) => state.authUser.user);
+  const [error, setError] = React.useState(null);
 
+  useEffect(() => {
+    fetch(url)
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('500 Internal Server Error');
+        }
+        /*        return response.json(); */
+      })
+      .then(data => console.log(data))
+      .catch(error => {
+        console.error('Error:', error);
+        setError(error.message); // Set error message in state
+      });
+  }, []); // Empty array as dependency to run only once
 
   const handleLogin = () => {
-    // ทำการ login หรือตรวจสอบข้อมูลของผู้ใช้ที่นี่
-
     if (user) {
       navigation.navigate("Home");
     } else {
       navigation.navigate("Login");
     }
-
-    // เมื่อ login สำเร็จ ให้ navigate ไปยังหน้า Home
   };
+
   return (
     <View style={styles.container}>
-      <Image
-        source={logo} // Replace with the actual path to your local image
-        style={styles.logo_image}
-      />
+      <Image source={logo} style={styles.logo_image} />
       <Text style={styles.textIndex}>
         ประวัติโดยย่อแบบคร่าวๆ ก่อนโหลดหน้าจอสู่หน้าล็อคอินขั้นต่อไป
       </Text>
       <Pressable style={styles.button} onPress={handleLogin}>
         <Text style={styles.textLogin}>เริ่มใช้งาน</Text>
       </Pressable>
+      {error && <Text style={styles.errorNetwork}>{error}</Text>}
     </View>
   );
 };
@@ -76,4 +78,9 @@ const styles = StyleSheet.create({
     color: "#FFFFFF",
     fontSize: 16,
   },
+  errorNetwork: {
+    color: "red",
+    fontSize: 18,
+    marginTop: 8
+  }
 });

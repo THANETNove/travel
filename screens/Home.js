@@ -10,7 +10,7 @@ import {
   Pressable,
 } from "react-native";
 import PagerView from 'react-native-pager-view';
-
+import { apiUrl as url } from "../config";
 /* import Carousel from "react-native-snap-carousel"; */
 import { useSelector, useDispatch } from "react-redux";
 import { getData } from "../redux/auth";
@@ -21,7 +21,22 @@ const Home = ({ navigation }) => {
   const { data, statusData } = useSelector((state) => state.authUser);
   const pagerRef = useRef(null);
   const [currentPage, setCurrentPage] = useState(0);
+  const [error, setError] = React.useState(null);
 
+  useEffect(() => {
+    fetch(url)
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('500 Internal Server Error');
+        }
+        // return response.json();
+      })
+      .then(data => console.log(data))
+      .catch(error => {
+        console.error('Error:', error);
+        setError(error.message); // Set error message in state
+      });
+  }, []); // Empty array as dependency to run only once
 
   const images = [
     require("../assets/image/a1.webp"),
@@ -97,6 +112,7 @@ const Home = ({ navigation }) => {
         <Pressable style={styles.button} onPress={() => handleBoxContent(3)}>
           <Text style={styles.textButton}>สถานที่ซื้อของฝาก</Text>
         </Pressable>
+        {error && <Text style={styles.errorNetwork}>{error}</Text>}
       </ScrollView>
     </SafeAreaView>
   );
@@ -157,4 +173,9 @@ const styles = StyleSheet.create({
     height: '100%',
     resizeMode: 'cover',
   },
+  errorNetwork: {
+    color: "red",
+    fontSize: 18,
+    marginTop: 8
+  }
 });
