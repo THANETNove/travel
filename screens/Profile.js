@@ -44,7 +44,7 @@ const Profile = ({ navigation }) => {
         </View>
         <View style={styles.boxIndex}>
           <Text style={styles.text}>
-            ชื่อ-นามสกุล : {data && data.first_name}
+            ชื่อ-นามสกุล : {data && data.name}
           </Text>
           <Text style={styles.text}>Email : {data && data.email}</Text>
           <Text style={styles.text}>ที่อยู่ : {data && data.address}</Text>
@@ -54,7 +54,7 @@ const Profile = ({ navigation }) => {
           <Text style={styles.text}>เขต/อำเภอ : {data && data.district}</Text>
           <Text style={styles.text}>จังหวัด : {data && data.province}</Text>
           <Text style={styles.text}>
-            รหัสไปรษณีย์ : {data && data.zip_code}
+            รหัสไปรษณีย์ : {data && data.zipCode}
           </Text>
           <Pressable onPress={handleLogout}>
             <View style={styles.logout}>
