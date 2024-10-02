@@ -110,7 +110,11 @@ export default function App() {
     <Provider store={store}>
       <PersistGate loading={null} persistor={persister}>
         <NavigationContainer>
-
+          <StatusBar
+            animated={true}
+            backgroundColor="#61dafb"
+            barStyle="dark-content" // หรือใช้ "light-content" ขึ้นอยู่กับธีมที่คุณต้องการ
+          />
           <Stack.Navigator
             initialRouteName="Index"
             screenOptions={{ headerShown: false }}

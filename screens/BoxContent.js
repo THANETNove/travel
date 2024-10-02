@@ -194,7 +194,7 @@ const styles = StyleSheet.create({
   boxContent: {
     marginTop: 16,
     width: "100%",
-    height: 120,
+    height: "auto",
     backgroundColor: "#FFFFFF",
     borderRadius: 16,
     padding: 16,
