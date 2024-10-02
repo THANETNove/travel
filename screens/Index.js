@@ -40,7 +40,7 @@ const Index = ({ navigation }) => {
       <Pressable style={styles.button} onPress={handleLogin}>
         <Text style={styles.textLogin}>เริ่มใช้งาน</Text>
       </Pressable>
-      {error && <Text style={styles.errorNetwork}>{error}</Text>}
+      {/* {error && <Text style={styles.errorNetwork}>{error}</Text>} */}
     </View>
   );
 };

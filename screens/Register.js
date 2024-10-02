@@ -126,6 +126,8 @@ const Register = ({ navigation }) => {
   };
 
   useEffect(() => {
+
+    console.log("user", user, statusUser);
     if (user != null) {
       navigation.navigate("Home");
     }

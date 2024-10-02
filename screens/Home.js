@@ -112,7 +112,7 @@ const Home = ({ navigation }) => {
         <Pressable style={styles.button} onPress={() => handleBoxContent(3)}>
           <Text style={styles.textButton}>สถานที่ซื้อของฝาก</Text>
         </Pressable>
-        {error && <Text style={styles.errorNetwork}>{error}</Text>}
+        {/*   {error && <Text style={styles.errorNetwork}>{error}</Text>} */}
       </ScrollView>
     </SafeAreaView>
   );
